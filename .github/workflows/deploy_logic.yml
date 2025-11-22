@@ -1,4 +1,4 @@
-name: Deploy Logic
+name: Deploy Logic and Versioning
 on:
   push:
     branches: main
