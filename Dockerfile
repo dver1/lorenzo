@@ -6,7 +6,7 @@ COPY package.json ./
 RUN npm install --production
 
 COPY server.js ./
-COPY web ./public   # 👈 aquí está el cambio
+COPY web ./public 
 
 EXPOSE 8080
 CMD ["node", "server.js"]
