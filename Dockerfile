@@ -10,9 +10,9 @@ RUN npm install --only=production
 
 
 # Copiar archivos de la aplicación
-COPY web/public ./public
-COPY server.js .
-COPY package.json .
+COPY server.js ./
+COPY web ./public
+COPY package.json ./
 
 
 # Exponer el puerto 8080 (requerido por Cloud Run)
