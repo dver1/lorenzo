@@ -1,3 +1,10 @@
+## [1.1.2](https://github.com/dver1/lorenzo/compare/v1.1.1...v1.1.2) (2025-11-22)
+
+
+### Bug Fixes
+
+* no puedo mas ([0b396fd](https://github.com/dver1/lorenzo/commit/0b396fd792c0cb638a4b6b2c9e0784af95a8e643))
+
 ## [1.1.1](https://github.com/dver1/lorenzo/compare/v1.1.0...v1.1.1) (2025-11-22)
 
 
