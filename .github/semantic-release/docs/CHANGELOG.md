@@ -1,3 +1,12 @@
+# [1.1.0](https://github.com/dver1/lorenzo/compare/v1.0.0...v1.1.0) (2025-11-22)
+
+
+### Features
+
+* casandra ([ec30bf0](https://github.com/dver1/lorenzo/commit/ec30bf041883836e91f1532fe3209089baa8d7d8))
+* no puedo mas ([2bc1fb4](https://github.com/dver1/lorenzo/commit/2bc1fb48a9991138d396631dff1389c464026374))
+* pepa ([dcd1ce9](https://github.com/dver1/lorenzo/commit/dcd1ce93281f09049fdda6a82c880bd8e0ac91f2))
+
 # 1.0.0 (2025-11-22)
 
 
