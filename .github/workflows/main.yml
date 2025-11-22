@@ -72,9 +72,10 @@ jobs:
         run: |
           VERSION=${{ needs.release.outputs.version }}
           if [ -z "$VERSION" ]; then VERSION="latest"; fi
+          TAG="v$(echo $VERSION | tr '.' '-')"
           gcloud run deploy lorenzo \
             --image=europe-west1-docker.pkg.dev/rigoberta-menchu/lorenzo-containers/lorenzo:$VERSION \
             --region=europe-west1 \
             --allow-unauthenticated \
-            --tag=$VERSION
+            --tag=$TAG
           gcloud run services update-traffic lorenzo --to-latest --region=europe-west1
