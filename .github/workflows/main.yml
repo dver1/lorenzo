@@ -20,10 +20,12 @@ jobs:
         with:
           node-version: "22"
 
+      # Instala las dependencias de semantic-release desde el package.json en .github/semantic-release
       - name: Install semantic-release deps
         run: npm ci
         working-directory: .github/semantic-release
 
+      # Ejecuta semantic-release usando la action oficial, que expone la versión como output
       - name: Run semantic-release
         id: semantic
         uses: cycjimmy/semantic-release-action@v4
