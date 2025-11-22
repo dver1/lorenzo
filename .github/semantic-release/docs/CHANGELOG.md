@@ -1,3 +1,15 @@
+# [2.0.0](https://github.com/dver1/lorenzo/compare/v1.4.0...v2.0.0) (2025-11-22)
+
+
+### Features
+
+* add lorenzo ([42db0ed](https://github.com/dver1/lorenzo/commit/42db0ed6cf93a45c13cac95cf78bd99cb26fd484))
+
+
+### BREAKING CHANGES
+
+* add lorenzo
+
 # [1.4.0](https://github.com/dver1/lorenzo/compare/v1.3.0...v1.4.0) (2025-11-22)
 
 
