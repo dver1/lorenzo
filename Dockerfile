@@ -5,7 +5,7 @@ COPY package.json ./
 RUN npm install --production
 
 COPY server.js ./
-COPY web ./public  
+COPY public ./public
 
 EXPOSE 8080
 CMD ["node", "server.js"]
