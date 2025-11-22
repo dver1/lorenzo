@@ -1,3 +1,10 @@
+# [2.3.0](https://github.com/dver1/lorenzo/compare/v2.2.0...v2.3.0) (2025-11-22)
+
+
+### Features
+
+* juanita la fantastica ([2c7efec](https://github.com/dver1/lorenzo/commit/2c7efec63ab3e25812a3ed573df90f345105a639))
+
 # [2.2.0](https://github.com/dver1/lorenzo/compare/v2.1.0...v2.2.0) (2025-11-22)
 
 
