@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/dver1/lorenzo/compare/v1.2.0...v1.3.0) (2025-11-22)
+
+
+### Features
+
+* esto es para mearse ([e03ea1e](https://github.com/dver1/lorenzo/commit/e03ea1e5c7a8ecc40a65629371753c93d4bbb13c))
+
 # [1.2.0](https://github.com/dver1/lorenzo/compare/v1.1.2...v1.2.0) (2025-11-22)
 
 
