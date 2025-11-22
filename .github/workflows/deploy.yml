@@ -1,0 +1,30 @@
+name: Build and Push to GCP Artifact Registry
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Cloud SDK
+        uses: google-github-actions/setup-gcloud@v2
+        with:
+          project_id: rigoberta-menchu
+          service_account_key: ${{ secrets.GCP_CREDENTIALS }}
+
+      - name: Configure Docker for Artifact Registry
+        run: gcloud auth configure-docker europe-west1-docker.pkg.dev --quiet
+
+      - name: Build Docker image
+        run: |
+          docker build -t europe-west1-docker.pkg.dev/rigoberta-menchu/lorenzo-containers/lorenzo:latest .
+
+      - name: Push Docker image
+        run: |
+          docker push europe-west1-docker.pkg.dev/rigoberta-menchu/lorenzo-containers/lorenzo:latest
