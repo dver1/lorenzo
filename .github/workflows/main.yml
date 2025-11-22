@@ -1,13 +1,13 @@
 name: Release
 on:
   push:
-    branches: "main"
+    branches: ["main"]  # Cambia a ["staging"] si tu release.config.js publica en 'staging'
 
 jobs:
   release:
     runs-on: ubuntu-latest
     outputs:
-      version: ${{ steps.semantic.outputs.version }}
+      version: ${{ steps.get_version.outputs.version }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -17,14 +17,29 @@ jobs:
         with:
           node-version: "22"
 
-      - run: npm ci
+      - name: Install semantic-release deps
+        run: npm ci
         working-directory: .github/semantic-release
 
-      - name: Run semantic-release
-        id: semantic
+      # Obtiene la siguiente versión con semantic-release en dry-run usando el binario local
+      - name: Get next version (dry-run)
+        id: get_version
         run: |
-          VERSION=$(npx semantic-release --extends ./.github/semantic-release/release.config.js --dry-run | grep -oP 'The next release version is \K[0-9]+\.[0-9]+\.[0-9]+')
+          cd .github/semantic-release
+          VERSION=$(./node_modules/.bin/semantic-release --extends ./release.config.js --dry-run | grep -oP 'The next release version is \K[0-9]+\.[0-9]+\.[0-9]+')
+          if [ -z "$VERSION" ]; then
+            echo "No version calculated. Check branch filter or commit messages."
+            exit 1
+          fi
           echo "version=$VERSION" >> $GITHUB_OUTPUT
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # Publica de verdad (opcional). Si tu branches == "main", quita --dry-run para publicar
+      - name: Publish release
+        run: |
+          cd .github/semantic-release
+          ./node_modules/.bin/semantic-release --extends ./release.config.js
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
