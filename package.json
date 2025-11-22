@@ -1,0 +1,21 @@
+{
+  "name": "lorenzo-hora",
+  "version": "1.0.0",
+  "description": "Lorenzo tells you the time",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [
+    "lorenzo",
+    "time",
+    "web"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
+
+
