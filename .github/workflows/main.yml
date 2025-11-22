@@ -28,10 +28,9 @@ jobs:
       # Ejecuta semantic-release usando la action oficial, que expone la versión como output
       - name: Run semantic-release
         id: semantic
-        uses: cycjimmy/semantic-release-action@v4
-        with:
-          semantic_version: 25
-          extends: ./.github/semantic-release/release.config.js
+        run: |
+          cd .github/semantic-release
+          npx semantic-release --extends ./release.config.js
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
