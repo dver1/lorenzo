@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lorenzo - La Hora</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Lorenzo</h1>
+        <div class="lorenzo-container">
+            <div class="speech-bubble" id="speechBubble">
+                <span id="timeDisplay"></span>
+            </div>
+            <div class="lorenzo-image" id="lorenzoImage">
+                <svg viewBox="0 0 250 350" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Sombrero -->
+                    <ellipse cx="125" cy="45" rx="55" ry="12" fill="#2c3e50"/>
+                    <rect x="90" y="45" width="70" height="25" rx="5" fill="#34495e"/>
+                    <ellipse cx="125" cy="70" rx="50" ry="8" fill="#1a252f"/>
+                    
+                    <!-- Cabeza -->
+                    <circle cx="125" cy="100" r="55" fill="#f4c2a1" stroke="#d4a574" stroke-width="2"/>
+                    
+                    <!-- Orejas -->
+                    <ellipse cx="75" cy="105" rx="8" ry="12" fill="#f4c2a1" stroke="#d4a574" stroke-width="1.5"/>
+                    <ellipse cx="175" cy="105" rx="8" ry="12" fill="#f4c2a1" stroke="#d4a574" stroke-width="1.5"/>
+                    <ellipse cx="75" cy="105" rx="4" ry="6" fill="#d4a574"/>
+                    <ellipse cx="175" cy="105" rx="4" ry="6" fill="#d4a574"/>
+                    
+                    <!-- Ojos -->
+                    <circle cx="110" cy="95" r="8" fill="#fff"/>
+                    <circle cx="140" cy="95" r="8" fill="#fff"/>
+                    <circle cx="110" cy="95" r="5" fill="#000"/>
+                    <circle cx="140" cy="95" r="5" fill="#000"/>
+                    <circle cx="112" cy="93" r="2" fill="#fff"/>
+                    <circle cx="142" cy="93" r="2" fill="#fff"/>
+                    
+                    <!-- Cejas -->
+                    <path d="M 100 85 Q 110 80 120 85" stroke="#8b6914" stroke-width="3" fill="none" stroke-linecap="round"/>
+                    <path d="M 130 85 Q 140 80 150 85" stroke="#8b6914" stroke-width="3" fill="none" stroke-linecap="round"/>
+                    
+                    <!-- Nariz -->
+                    <ellipse cx="125" cy="110" rx="4" ry="6" fill="#d4a574"/>
+                    <path d="M 120 110 Q 125 115 130 110" stroke="#c99d63" stroke-width="1.5" fill="none"/>
+                    
+                    <!-- Bigote -->
+                    <path d="M 110 120 Q 125 125 140 120" stroke="#8b6914" stroke-width="4" fill="none" stroke-linecap="round"/>
+                    <path d="M 115 118 Q 125 123 135 118" stroke="#8b6914" stroke-width="3" fill="none" stroke-linecap="round"/>
+                    
+                    <!-- Boca sonriente -->
+                    <path d="M 110 130 Q 125 140 140 130" stroke="#000" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+                    
+                    <!-- Barba -->
+                    <path d="M 100 135 Q 125 160 150 135 Q 125 180 100 135" fill="#8b6914" opacity="0.8"/>
+                    <path d="M 105 140 Q 125 160 145 140 Q 125 175 105 140" fill="#6b5010" opacity="0.6"/>
+                    
+                    <!-- Cuello -->
+                    <rect x="110" y="155" width="30" height="20" rx="5" fill="#f4c2a1"/>
+                    
+                    <!-- Camisa/Cuerpo -->
+                    <path d="M 70 175 Q 70 200 80 220 L 80 280 Q 85 300 100 310 L 150 310 Q 165 300 170 280 L 170 220 Q 180 200 180 175 Q 175 160 160 155 L 90 155 Q 75 160 70 175 Z" fill="#4a90e2" stroke="#2d5aa0" stroke-width="2"/>
+                    
+                    <!-- Corbata -->
+                    <rect x="120" y="175" width="10" height="50" rx="2" fill="#e74c3c"/>
+                    <polygon points="115,175 125,190 135,175" fill="#c0392b"/>
+                    <rect x="122" y="220" width="6" height="5" rx="1" fill="#c0392b"/>
+                    
+                    <!-- Brazos -->
+                    <ellipse cx="60" cy="200" rx="12" ry="35" fill="#f4c2a1" transform="rotate(-25 60 200)"/>
+                    <ellipse cx="190" cy="200" rx="12" ry="35" fill="#f4c2a1" transform="rotate(25 190 200)"/>
+                    <ellipse cx="55" cy="195" rx="8" ry="25" fill="#4a90e2" transform="rotate(-25 55 195)"/>
+                    <ellipse cx="195" cy="195" rx="8" ry="25" fill="#4a90e2" transform="rotate(25 195 195)"/>
+                    
+                    <!-- Manos -->
+                    <circle cx="50" cy="230" r="12" fill="#f4c2a1"/>
+                    <circle cx="200" cy="230" r="12" fill="#f4c2a1"/>
+                    
+                    <!-- Piernas -->
+                    <rect x="95" y="310" width="30" height="35" rx="3" fill="#2d5aa0"/>
+                    <rect x="125" y="310" width="30" height="35" rx="3" fill="#2d5aa0"/>
+                    
+                    <!-- Zapatos -->
+                    <ellipse cx="110" cy="350" rx="20" ry="8" fill="#1a1a1a"/>
+                    <ellipse cx="140" cy="350" rx="20" ry="8" fill="#1a1a1a"/>
+                    <ellipse cx="110" cy="348" rx="15" ry="5" fill="#2c2c2c"/>
+                    <ellipse cx="140" cy="348" rx="15" ry="5" fill="#2c2c2c"/>
+                </svg>
+            </div>
+        </div>
+        <button id="timeButton" onclick="showTime()">What time is it, Lorenzo?</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+
+

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lorenzo - The Time</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Lorenzo</h1>
+        <div class="lorenzo-container">
+            <div class="speech-bubble" id="speechBubble">
+                <span id="timeDisplay"></span>
+            </div>
+            <div class="lorenzo-image" id="lorenzoImage">
+                <svg viewBox="0 0 250 350" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Cabello -->
+                    <path d="M 70 50 Q 60 60 65 80 Q 70 100 80 110 Q 90 115 100 120 Q 110 115 120 120 Q 130 115 140 120 Q 150 115 160 120 Q 170 115 180 110 Q 190 100 195 80 Q 200 60 190 50 Q 180 45 170 50 Q 160 48 150 50 Q 140 48 130 50 Q 120 48 110 50 Q 100 48 90 50 Q 80 48 70 50 Z" fill="#1a1a1a"/>
+                    <path d="M 75 55 Q 70 70 75 85 Q 80 95 90 100 Q 100 102 110 100 Q 120 102 130 100 Q 140 102 150 100 Q 160 102 170 100 Q 180 95 185 85 Q 190 70 185 55 Q 180 52 170 55 Q 160 53 150 55 Q 140 53 130 55 Q 120 53 110 55 Q 100 53 90 55 Q 80 53 75 55 Z" fill="#2c2c2c"/>
+                    
+                    <!-- Cabeza -->
+                    <ellipse cx="125" cy="110" rx="60" ry="65" fill="#d4a574" stroke="#b8956a" stroke-width="2"/>
+                    
+                    <!-- Orejas -->
+                    <ellipse cx="70" cy="115" rx="10" ry="15" fill="#d4a574" stroke="#b8956a" stroke-width="1.5"/>
+                    <ellipse cx="180" cy="115" rx="10" ry="15" fill="#d4a574" stroke="#b8956a" stroke-width="1.5"/>
+                    <ellipse cx="70" cy="115" rx="5" ry="8" fill="#b8956a"/>
+                    <ellipse cx="180" cy="115" rx="5" ry="8" fill="#b8956a"/>
+                    
+                    <!-- Cejas gruesas -->
+                    <g id="eyebrow-left-group">
+                        <path id="eyebrow-left" d="M 95 85 Q 110 75 125 85" stroke="#1a1a1a" stroke-width="5" fill="none" stroke-linecap="round"/>
+                    </g>
+                    <g id="eyebrow-right-group">
+                        <path id="eyebrow-right" d="M 125 85 Q 140 75 155 85" stroke="#1a1a1a" stroke-width="5" fill="none" stroke-linecap="round"/>
+                    </g>
+                    
+                    <!-- Ojos -->
+                    <g id="eye-left-group">
+                        <ellipse id="eye-left" cx="110" cy="100" rx="10" ry="8" fill="#fff"/>
+                        <circle id="pupil-left" cx="110" cy="100" r="6" fill="#000"/>
+                        <circle cx="112" cy="98" r="2" fill="#fff"/>
+                    </g>
+                    <g id="eye-right-group">
+                        <ellipse id="eye-right" cx="140" cy="100" rx="10" ry="8" fill="#fff"/>
+                        <circle id="pupil-right" cx="140" cy="100" r="6" fill="#000"/>
+                        <circle cx="142" cy="98" r="2" fill="#fff"/>
+                    </g>
+                    
+                    <!-- Nariz -->
+                    <ellipse cx="125" cy="115" rx="5" ry="8" fill="#b8956a"/>
+                    <path d="M 120 115 Q 125 120 130 115" stroke="#a0855a" stroke-width="2" fill="none"/>
+                    
+                    <!-- Bigote característico -->
+                    <path d="M 105 125 Q 110 130 115 128 Q 120 130 125 128 Q 130 130 135 128 Q 140 130 145 125" stroke="#1a1a1a" stroke-width="6" fill="none" stroke-linecap="round"/>
+                    <path d="M 108 123 Q 115 128 125 126 Q 135 128 142 123" stroke="#1a1a1a" stroke-width="5" fill="none" stroke-linecap="round"/>
+                    <rect x="110" y="125" width="30" height="8" rx="4" fill="#1a1a1a"/>
+                    
+                    <!-- Boca -->
+                    <g id="mouth-group">
+                        <path id="mouth" d="M 110 135 Q 125 142 140 135" stroke="#000" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+                    </g>
+                    
+                    <!-- Papada/Barbilla -->
+                    <ellipse cx="125" cy="165" rx="45" ry="25" fill="#d4a574" opacity="0.7"/>
+                    
+                    <!-- Cuello -->
+                    <rect x="110" y="160" width="30" height="25" rx="5" fill="#d4a574"/>
+                    
+                    <!-- Traje/Cuerpo -->
+                    <path d="M 65 185 Q 65 210 75 230 L 75 290 Q 80 310 95 320 L 155 320 Q 170 310 175 290 L 175 230 Q 185 210 185 185 Q 180 170 165 165 L 85 165 Q 70 170 65 185 Z" fill="#1a1a1a" stroke="#000" stroke-width="2"/>
+                    
+                    <!-- Camisa blanca -->
+                    <path d="M 100 185 L 100 290 L 150 290 L 150 185 Q 150 175 140 170 L 110 170 Q 100 175 100 185 Z" fill="#ffffff" stroke="#e0e0e0" stroke-width="1"/>
+                    
+                    <!-- Corbata roja -->
+                    <rect x="120" y="185" width="10" height="60" rx="2" fill="#c41e3a"/>
+                    <polygon points="115,185 125,200 135,185" fill="#8b0000"/>
+                    <rect x="122" y="240" width="6" height="5" rx="1" fill="#8b0000"/>
+                    
+                    <!-- Brazos y Manos -->
+                    <g id="arm-left-group">
+                        <ellipse id="arm-left" cx="55" cy="210" rx="14" ry="40" fill="#d4a574" transform="rotate(-25 55 210)"/>
+                        <ellipse cx="50" cy="205" rx="10" ry="30" fill="#1a1a1a" transform="rotate(-25 50 205)"/>
+                        <circle cx="45" cy="245" r="14" fill="#d4a574"/>
+                    </g>
+                    <g id="arm-right-group">
+                        <ellipse id="arm-right" cx="195" cy="210" rx="14" ry="40" fill="#d4a574" transform="rotate(25 195 210)"/>
+                        <ellipse cx="200" cy="205" rx="10" ry="30" fill="#1a1a1a" transform="rotate(25 200 205)"/>
+                        <circle cx="205" cy="245" r="14" fill="#d4a574"/>
+                    </g>
+                    
+                    <!-- Piernas -->
+                    <rect x="90" y="320" width="35" height="30" rx="3" fill="#1a1a1a"/>
+                    <rect x="125" y="320" width="35" height="30" rx="3" fill="#1a1a1a"/>
+                    
+                    <!-- Zapatos negros -->
+                    <ellipse id="shoe-left" cx="107" cy="355" rx="22" ry="10" fill="#000"/>
+                    <ellipse id="shoe-right" cx="143" cy="355" rx="22" ry="10" fill="#000"/>
+                    <ellipse cx="107" cy="353" rx="18" ry="7" fill="#2c2c2c"/>
+                    <ellipse cx="143" cy="353" rx="18" ry="7" fill="#2c2c2c"/>
+                </svg>
+            </div>
+        </div>
+        <button id="timeButton">What time is it, Lorenzo?</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+
+

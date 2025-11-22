@@ -1,16 +1,21 @@
+# Usar una imagen base de Node.js
 FROM node:18-alpine
 
+# Crear directorio de trabajo
 WORKDIR /app
 
-# Copiar dependencias
+# Copiar package.json e instalar dependencias
 COPY package.json ./
 RUN npm install --production
 
-# Copiar servidor y frontend
+# Copiar archivos de la aplicación
 COPY server.js ./
-COPY web ./public
+COPY public ./public
 
-# Exponer puerto requerido por Cloud Run
+# Exponer el puerto 8080 (requerido por Cloud Run)
 EXPOSE 8080
 
+# Iniciar el servidor
 CMD ["node", "server.js"]
+
+
