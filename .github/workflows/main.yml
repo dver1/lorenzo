@@ -10,7 +10,7 @@ jobs:
   release:
     runs-on: ubuntu-latest
     outputs:
-      version: ${{ steps.semantic.outputs.new_release_version }}
+      version: ${{ steps.semantic.outputs.version }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -20,17 +20,20 @@ jobs:
         with:
           node-version: "22"
 
-      # Instala las dependencias de semantic-release desde el package.json en .github/semantic-release
       - name: Install semantic-release deps
         run: npm ci
         working-directory: .github/semantic-release
 
-      # Ejecuta semantic-release usando la action oficial, que expone la versión como output
       - name: Run semantic-release
         id: semantic
         run: |
           cd .github/semantic-release
-          npx semantic-release --extends ./release.config.js
+          VERSION=$(npx semantic-release --extends ./release.config.js | grep -oP 'The next release version is \K[0-9]+\.[0-9]+\.[0-9]+')
+          if [ -z "$VERSION" ]; then
+            echo "⚠️ No se calculó versión, usando 'latest'"
+            VERSION="latest"
+          fi
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -62,11 +65,13 @@ jobs:
       - name: Push Docker image
         run: |
           VERSION=${{ needs.release.outputs.version }}
+          if [ -z "$VERSION" ]; then VERSION="latest"; fi
           docker push europe-west1-docker.pkg.dev/rigoberta-menchu/lorenzo-containers/lorenzo:$VERSION
 
       - name: Deploy to Cloud Run
         run: |
           VERSION=${{ needs.release.outputs.version }}
+          if [ -z "$VERSION" ]; then VERSION="latest"; fi
           gcloud run deploy lorenzo \
             --image=europe-west1-docker.pkg.dev/rigoberta-menchu/lorenzo-containers/lorenzo:$VERSION \
             --region=europe-west1 \
