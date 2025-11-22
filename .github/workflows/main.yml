@@ -74,7 +74,8 @@ jobs:
           TAG="v$(echo $VERSION | tr '.' '-')"
 
 
-          gcloud builds submit --tag europe-west1-docker.pkg.dev/rigoberta-menchu/lorenzo-containers/lorenzo:$VERSION
+          gcloud builds submit . \
+            --tag europe-west1-docker.pkg.dev/rigoberta-menchu/lorenzo-containers/lorenzo:$VERSION
           gcloud run deploy lorenzo \
             --image europe-west1-docker.pkg.dev/rigoberta-menchu/lorenzo-containers/lorenzo:$VERSION \
             --platform managed \
