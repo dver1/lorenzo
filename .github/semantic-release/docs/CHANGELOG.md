@@ -1,3 +1,10 @@
+# [2.2.0](https://github.com/dver1/lorenzo/compare/v2.1.0...v2.2.0) (2025-11-22)
+
+
+### Features
+
+* app ([e20005e](https://github.com/dver1/lorenzo/commit/e20005ec3963a901778183a98256e0b59508b89f))
+
 # [2.1.0](https://github.com/dver1/lorenzo/compare/v2.0.0...v2.1.0) (2025-11-22)
 
 
