@@ -1,3 +1,10 @@
+# [2.8.0](https://github.com/dver1/lorenzo/compare/v2.7.0...v2.8.0) (2025-11-22)
+
+
+### Features
+
+* edgar botijo ([18b2a93](https://github.com/dver1/lorenzo/commit/18b2a93efefee55f54876793a5f4b41359f52923))
+
 # [2.7.0](https://github.com/dver1/lorenzo/compare/v2.6.0...v2.7.0) (2025-11-22)
 
 
