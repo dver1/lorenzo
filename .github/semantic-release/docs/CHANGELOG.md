@@ -1,3 +1,10 @@
+# [2.5.0](https://github.com/dver1/lorenzo/compare/v2.4.0...v2.5.0) (2025-11-22)
+
+
+### Features
+
+* change last dance ([eb5e3c0](https://github.com/dver1/lorenzo/commit/eb5e3c048a8572addbc08e13b87d370baab753c5))
+
 # [2.4.0](https://github.com/dver1/lorenzo/compare/v2.3.0...v2.4.0) (2025-11-22)
 
 
