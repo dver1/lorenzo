@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/dver1/lorenzo/compare/v1.1.2...v1.2.0) (2025-11-22)
+
+
+### Features
+
+* cambio ultimo ([99201f7](https://github.com/dver1/lorenzo/commit/99201f776140818b82997765472e675d66356eff))
+
 ## [1.1.2](https://github.com/dver1/lorenzo/compare/v1.1.1...v1.1.2) (2025-11-22)
 
 
