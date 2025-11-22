@@ -1,0 +1,43 @@
+name: Daniel Rollback
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  rollback:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Retrieve the latest and the second-to-last tag
+        id: tags
+        run: |
+          git fetch --tags
+          LAST_TAG=$(git tag --sort=-v:refname | sed -n '1p')
+          PREVIOUS_TAG=$(git tag --sort=-v:refname | sed -n '2p')
+          echo "last_tag=$LAST_TAG" >> $GITHUB_OUTPUT
+          echo "previous_tag=$PREVIOUS_TAG" >> $GITHUB_OUTPUT
+
+      - name: Remove the current release and its tag
+        run: |
+          gh release delete ${{ steps.tags.outputs.last_tag }} -y || true
+          git push origin :refs/tags/${{ steps.tags.outputs.last_tag }} || true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Create a rollback with a new tag
+        run: |
+          gh release create ${{ steps.tags.outputs.previous_tag }}-rollback \
+            --title "Rollback to ${{ steps.tags.outputs.previous_tag }}" \
+            --notes "Automatic rollback"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Revert code to previous tag
+        run: |
+          git reset --hard ${{ steps.tags.outputs.previous_tag }}
+          git push origin HEAD --force

@@ -1,0 +1,32 @@
+name: Rollback
+
+on:
+  workflow_dispatch:
+    inputs:
+      revert-to-version:
+        description: "Target version for reversion. Must be available as a Cloud Run revision. Format: \"vx.x.x\" as appearing in GitHub releases. Input is case-sensitive."
+        required: true
+
+permissions:
+  contents: write
+
+jobs:
+  rollback:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Auth Google cloud
+        uses: "google-github-actions/auth@v2"
+        with:
+          credentials_json: "${{ secrets.GCP_CREDENTIALS }}"
+          
+      - name: Set up Cloud SDK
+        uses: google-github-actions/setup-gcloud@v3
+
+      - name: Redirect Cloud Run traffic to rollback revision
+        run: |
+          revert_version=${{ github.event.inputs.revert-to-version }}
+          revert_version=${revert_version//./-}
+          gcloud run services update-traffic hello --to-tags $revert_version=100 --region europe-west1

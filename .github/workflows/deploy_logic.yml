@@ -1,0 +1,102 @@
+name: Deploy Logic
+on:
+  push:
+    branches: main
+
+jobs:
+  get-release-version:
+    runs-on: ubuntu-latest
+    outputs:
+      release_version: ${{ steps.version.outputs.release_version }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 
+
+      # Get the release tag from the second parent of the merge commit (the last commit from staging pre-merge)
+      # We have to replace the '.' separators in the version with '-' because Cloud Run revision tags cannot contain '.'s.
+      - name: Get release version
+        id: version
+        run: |          
+          RELEASE_VERSION=$(git tag --points-at HEAD^2)
+          RELEASE_VERSION=${RELEASE_VERSION//./-}
+          echo "release_version=$RELEASE_VERSION" >> $GITHUB_OUTPUT
+          echo "Release version: $RELEASE_VERSION"
+
+  detect-web-changes:
+    runs-on: ubuntu-latest
+    outputs:
+      web_changed: ${{ steps.changes.outputs.web_changed }}
+    # Check if there are changes to the web folder
+    # If so, we'll build and deploy a new container.
+    # Otherwise, we'll just tag the existing container.
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 
+
+      - name: Detect API changes
+        id: changes
+        run: |
+          WEB_CHANGED=$(git diff --name-only HEAD^ HEAD | grep '^web/' || true)
+          WEB_CHANGED=$([[ -n "$WEB_CHANGED" ]] && echo true || echo false)
+          echo "web_changed=$WEB_CHANGED" >> $GITHUB_OUTPUT
+          echo "Are there changes to web that require a rebuild?: $WEB_CHANGED"
+
+  deploy-container:
+    runs-on: ubuntu-latest
+    needs: 
+      - get-release-version
+      - detect-web-changes
+    if: needs.detect-web-changes.outputs.web_changed == 'true' # Deploy a new container only if there's an update to the web folder
+    steps:
+        - name: Auth Google cloud
+          uses: "google-github-actions/auth@v2"
+          with:
+            credentials_json: "${{ secrets.GCP_CREDENTIALS }}"
+            
+        # Authenticate with Google Cloud
+        - name: Set up Cloud SDK
+          uses: google-github-actions/setup-gcloud@v3
+
+        - name: Deploy revision
+          run: |
+            gcloud run deploy hello \
+              --image us-docker.pkg.dev/cloudrun/container/hello \
+              --region europe-west1 \
+              --allow-unauthenticated \
+              --tag ${{ needs.get-release-version.outputs.release_version }}
+            gcloud run services update-traffic hello --to-latest --region europe-west1
+
+  update-revision-tag:
+    runs-on: ubuntu-latest
+    needs: 
+      - get-release-version
+      - detect-web-changes
+    if: needs.detect-web-changes.outputs.web_changed == 'false'
+    steps:
+        # Auth Google cloud
+      - name: Auth Google cloud
+        uses: "google-github-actions/auth@v2"
+        with:
+          credentials_json: "${{ secrets.GCP_CREDENTIALS }}"
+          
+      # Authenticate with Google Cloud
+      - name: Set up Cloud SDK
+        uses: google-github-actions/setup-gcloud@v3
+
+      # Find the currently active revision (ie. the one servicing traffic)
+      - name: Find active revision
+        id: active_revision
+        run: |
+          ACTIVE_REVISION=$(gcloud run services describe hello \
+            --region=europe-west1 \
+            --format=json | jq '.spec.traffic[] | select(.percent) | .revisionName')
+          echo "Retagging currently active revision: $ACTIVE_REVISION"
+          echo "active_revision=$ACTIVE_REVISION" > $GITHUB_OUTPUT
+
+      - name: Tag existing revision
+        run: gcloud run services update-traffic hello --update-tags=${{ needs.get-release-version.outputs.release_version }}=${{ steps.active_revision.outputs.active_revision }} --region europe-west1 
