@@ -1,3 +1,10 @@
+# [2.7.0](https://github.com/dver1/lorenzo/compare/v2.6.0...v2.7.0) (2025-11-22)
+
+
+### Features
+
+* a joderse ([ea194a4](https://github.com/dver1/lorenzo/commit/ea194a43fde6562b5cc802317b6d52a8eeef7cdf))
+
 # [2.6.0](https://github.com/dver1/lorenzo/compare/v2.5.0...v2.6.0) (2025-11-22)
 
 
