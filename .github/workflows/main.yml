@@ -54,6 +54,7 @@ jobs:
         run: |
           VERSION=${{ needs.release.outputs.version }}
           if [ -z "$VERSION" ]; then
+            echo "⚠️ No se calculó versión, usando 'latest'"
             VERSION="latest"
           fi
           docker build -t europe-west1-docker.pkg.dev/rigoberta-menchu/lorenzo-containers/lorenzo:$VERSION ./web
