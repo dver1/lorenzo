@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/dver1/lorenzo/compare/v1.3.0...v1.4.0) (2025-11-22)
+
+
+### Features
+
+* quiero morilme ([3ebd80c](https://github.com/dver1/lorenzo/commit/3ebd80c5622d26511e68a5c9950152fc5df092bb))
+
 # [1.3.0](https://github.com/dver1/lorenzo/compare/v1.2.0...v1.3.0) (2025-11-22)
 
 
