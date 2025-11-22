@@ -1,3 +1,10 @@
+# [2.6.0](https://github.com/dver1/lorenzo/compare/v2.5.0...v2.6.0) (2025-11-22)
+
+
+### Features
+
+* vamos a dejarnos de monsergas ([2944b53](https://github.com/dver1/lorenzo/commit/2944b538b93f5048ab816f19eb1429c15a5e59bf))
+
 # [2.5.0](https://github.com/dver1/lorenzo/compare/v2.4.0...v2.5.0) (2025-11-22)
 
 
