@@ -1,3 +1,10 @@
+# [2.9.0](https://github.com/dver1/lorenzo/compare/v2.8.0...v2.9.0) (2025-11-22)
+
+
+### Features
+
+* la leche ([2f42c80](https://github.com/dver1/lorenzo/commit/2f42c8016251fde0eeecbf09e8fc46f24d8f3f10))
+
 # [2.8.0](https://github.com/dver1/lorenzo/compare/v2.7.0...v2.8.0) (2025-11-22)
 
 
