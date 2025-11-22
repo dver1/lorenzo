@@ -1,4 +1,4 @@
-name: Build and Push to GCP Artifact Registry
+name: Deploy to GCP
 
 on:
   push:
