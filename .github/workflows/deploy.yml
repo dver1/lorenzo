@@ -23,7 +23,7 @@ jobs:
 
       - name: Build Docker image
         run: |
-          docker build -t europe-west1-docker.pkg.dev/rigoberta-menchu/lorenzo-containers/lorenzo:latest .
+            docker build -t europe-west1-docker.pkg.dev/rigoberta-menchu/lorenzo-containers/lorenzo:latest ./web
 
       - name: Push Docker image
         run: |
