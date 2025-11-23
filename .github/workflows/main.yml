@@ -58,7 +58,7 @@ jobs:
 
           gcloud builds submit \
             --tag europe-west1-docker.pkg.dev/rigoberta-menchu/lorenzo-containers/lorenzo:$VERSION \
-            . -f Dockerfile.lorenzo
+            --dockerfile Dockerfile.lorenzo .
 
           gcloud run deploy lorenzo \
             --image europe-west1-docker.pkg.dev/rigoberta-menchu/lorenzo-containers/lorenzo:$VERSION \
