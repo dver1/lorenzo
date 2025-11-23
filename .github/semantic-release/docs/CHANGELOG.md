@@ -1,3 +1,10 @@
+# [2.11.0](https://github.com/dver1/lorenzo/compare/v2.10.1...v2.11.0) (2025-11-23)
+
+
+### Features
+
+* add prompt ([4a4d83a](https://github.com/dver1/lorenzo/commit/4a4d83aa03e033025fa8066e1aae455bf13b19a1))
+
 ## [2.10.1](https://github.com/dver1/lorenzo/compare/v2.10.0...v2.10.1) (2025-11-23)
 
 
