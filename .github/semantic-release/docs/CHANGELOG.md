@@ -1,3 +1,10 @@
+# [2.19.0](https://github.com/dver1/lorenzo/compare/v2.18.0...v2.19.0) (2025-11-23)
+
+
+### Features
+
+* lorenzo app ([6d47dcf](https://github.com/dver1/lorenzo/commit/6d47dcf0aedf7cffe18e3c607e2c077f33554c3a))
+
 # [2.18.0](https://github.com/dver1/lorenzo/compare/v2.17.0...v2.18.0) (2025-11-23)
 
 
