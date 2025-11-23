@@ -1,3 +1,10 @@
+# [2.18.0](https://github.com/dver1/lorenzo/compare/v2.17.0...v2.18.0) (2025-11-23)
+
+
+### Features
+
+* sin palabras ([fb11770](https://github.com/dver1/lorenzo/commit/fb11770b54a0ea200fc8c40ba2184d5dccadd783))
+
 # [2.17.0](https://github.com/dver1/lorenzo/compare/v2.16.0...v2.17.0) (2025-11-23)
 
 
