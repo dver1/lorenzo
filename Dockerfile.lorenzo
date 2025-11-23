@@ -1,0 +1,21 @@
+# Imagen base ligera de Node
+FROM node:18-alpine
+
+# Directorio de trabajo dentro del contenedor
+WORKDIR /app
+
+# Copiamos package.json y package-lock.json para instalar dependencias
+COPY package.json package-lock.json ./
+
+# Instalamos solo dependencias de producción
+RUN npm install --production
+
+# Copiamos el código de la aplicación
+COPY server.js ./ 
+COPY public ./public
+
+# Exponemos el puerto que usa Cloud Run
+EXPOSE 8080
+
+# Comando de arranque
+CMD ["node", "server.js"]
