@@ -1,3 +1,10 @@
+# [2.14.0](https://github.com/dver1/lorenzo/compare/v2.13.0...v2.14.0) (2025-11-23)
+
+
+### Features
+
+* create prom work ([1d6b584](https://github.com/dver1/lorenzo/commit/1d6b584ccba43e162491bb9a2f8531422f3e0beb))
+
 # [2.13.0](https://github.com/dver1/lorenzo/compare/v2.12.0...v2.13.0) (2025-11-23)
 
 
