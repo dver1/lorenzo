@@ -1,12 +1,7 @@
-# Imagen oficial de Prometheus
-FROM prom/prometheus:v2.53.0
+FROM prom/prometheus:v2.52.0
 
-# Copiamos prometheus.yml desde la carpeta del proyecto
 COPY monitoring/prometheus/prometheus.yml /etc/prometheus/prometheus.yml
 
-# Exponemos el puerto que Prometheus usa por defecto
 EXPOSE 9090
 
-# Ejecutamos Prometheus directamente
-ENTRYPOINT [ "/bin/prometheus" ]
-CMD [ "--config.file=/etc/prometheus/prometheus.yml", "--storage.tsdb.path=/prometheus" ]
+CMD [ "--config.file=/etc/prometheus/prometheus.yml", "--storage.tsdb.path=/prometheus", "--web.listen-address=:9090" ]
