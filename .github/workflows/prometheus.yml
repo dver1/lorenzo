@@ -1,4 +1,5 @@
 name: Deploy Prometheus
+
 on:
   push:
     branches:
@@ -19,6 +20,15 @@ jobs:
       - uses: google-github-actions/setup-gcloud@v3
         with:
           project_id: rigoberta-menchu
+
+      - name: Ensure monitoring repo exists
+        run: |
+          gcloud artifacts repositories describe monitoring \
+            --location=europe-west1 || \
+          gcloud artifacts repositories create monitoring \
+            --repository-format=docker \
+            --location=europe-west1 \
+            --description="Repositorio Docker para Prometheus y servicios de monitoring"
 
       - name: Prepare Dockerfile
         run: cp Dockerfile.prometheus Dockerfile

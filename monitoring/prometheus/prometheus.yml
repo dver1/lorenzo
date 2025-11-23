@@ -8,5 +8,3 @@ scrape_configs:
     static_configs:
       - targets:
           - v2-9-0---lorenzo-gltxpwkfwa-ew.a.run.app
-
-
