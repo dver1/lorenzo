@@ -1,3 +1,59 @@
+# [2.9.0](https://github.com/dver1/lorenzo/compare/v2.8.0...v2.9.0) (2025-11-22)
+
+
+### Features
+
+* la leche ([2f42c80](https://github.com/dver1/lorenzo/commit/2f42c8016251fde0eeecbf09e8fc46f24d8f3f10))
+
+# [2.8.0](https://github.com/dver1/lorenzo/compare/v2.7.0...v2.8.0) (2025-11-22)
+
+
+### Features
+
+* edgar botijo ([18b2a93](https://github.com/dver1/lorenzo/commit/18b2a93efefee55f54876793a5f4b41359f52923))
+
+# [2.7.0](https://github.com/dver1/lorenzo/compare/v2.6.0...v2.7.0) (2025-11-22)
+
+
+### Features
+
+* a joderse ([ea194a4](https://github.com/dver1/lorenzo/commit/ea194a43fde6562b5cc802317b6d52a8eeef7cdf))
+
+# [2.6.0](https://github.com/dver1/lorenzo/compare/v2.5.0...v2.6.0) (2025-11-22)
+
+
+### Features
+
+* vamos a dejarnos de monsergas ([2944b53](https://github.com/dver1/lorenzo/commit/2944b538b93f5048ab816f19eb1429c15a5e59bf))
+
+# [2.5.0](https://github.com/dver1/lorenzo/compare/v2.4.0...v2.5.0) (2025-11-22)
+
+
+### Features
+
+* change last dance ([eb5e3c0](https://github.com/dver1/lorenzo/commit/eb5e3c048a8572addbc08e13b87d370baab753c5))
+
+# [2.4.0](https://github.com/dver1/lorenzo/compare/v2.3.0...v2.4.0) (2025-11-22)
+
+
+### Features
+
+* add a ([b3c14bc](https://github.com/dver1/lorenzo/commit/b3c14bc89adf1eab924fa044630167fd05eb41c4))
+
+# [2.3.0](https://github.com/dver1/lorenzo/compare/v2.2.0...v2.3.0) (2025-11-22)
+
+
+### Features
+
+* juanita la fantastica ([2c7efec](https://github.com/dver1/lorenzo/commit/2c7efec63ab3e25812a3ed573df90f345105a639))
+
+# [2.2.0](https://github.com/dver1/lorenzo/compare/v2.1.0...v2.2.0) (2025-11-22)
+
+
+### Features
+
+* app ([e20005e](https://github.com/dver1/lorenzo/commit/e20005ec3963a901778183a98256e0b59508b89f))
+
 # [2.1.0](https://github.com/dver1/lorenzo/compare/v2.0.0...v2.1.0) (2025-11-22)
 
 

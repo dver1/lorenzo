@@ -57,10 +57,9 @@ jobs:
         run: |
           VERSION=${{ needs.release.outputs.version }}
           if [ -z "$VERSION" ]; then
-            echo "⚠️ No se calculó versión, usando 'latest'"
             VERSION="latest"
           fi
-          docker build -t europe-west1-docker.pkg.dev/rigoberta-menchu/lorenzo-containers/lorenzo:$VERSION ./web
+          docker build -t europe-west1-docker.pkg.dev/rigoberta-menchu/lorenzo-containers/lorenzo:$VERSION .
 
       - name: Push Docker image
         run: |
@@ -73,9 +72,14 @@ jobs:
           VERSION=${{ needs.release.outputs.version }}
           if [ -z "$VERSION" ]; then VERSION="latest"; fi
           TAG="v$(echo $VERSION | tr '.' '-')"
+
+
+          gcloud builds submit . \
+            --tag europe-west1-docker.pkg.dev/rigoberta-menchu/lorenzo-containers/lorenzo:$VERSION
           gcloud run deploy lorenzo \
-            --image=europe-west1-docker.pkg.dev/rigoberta-menchu/lorenzo-containers/lorenzo:$VERSION \
-            --region=europe-west1 \
+            --image europe-west1-docker.pkg.dev/rigoberta-menchu/lorenzo-containers/lorenzo:$VERSION \
+            --platform managed \
+            --region europe-west1 \
             --allow-unauthenticated \
             --tag=$TAG
           gcloud run services update-traffic lorenzo --to-latest --region=europe-west1
