@@ -1,3 +1,10 @@
+# [2.15.0](https://github.com/dver1/lorenzo/compare/v2.14.0...v2.15.0) (2025-11-23)
+
+
+### Features
+
+* cambio de ultima hora ([edb35db](https://github.com/dver1/lorenzo/commit/edb35db2462ba580b5e463482e91d98641c177eb))
+
 # [2.14.0](https://github.com/dver1/lorenzo/compare/v2.13.0...v2.14.0) (2025-11-23)
 
 
