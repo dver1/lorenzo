@@ -1,3 +1,10 @@
+# [2.10.0](https://github.com/dver1/lorenzo/compare/v2.9.0...v2.10.0) (2025-11-23)
+
+
+### Features
+
+* add prometheus ([dc72c60](https://github.com/dver1/lorenzo/commit/dc72c60af82aeb3731cd6a448be3d67c88bae969))
+
 # [2.9.0](https://github.com/dver1/lorenzo/compare/v2.8.0...v2.9.0) (2025-11-22)
 
 
