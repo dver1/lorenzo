@@ -3,6 +3,6 @@ FROM grafana/grafana:10.2.3
 
 # Copiamos configuración personalizada
 COPY monitoring/grafana/grafana.ini /etc/grafana/grafana.ini
-COPY monitoring/grafana/datasource.yml /etc/grafana/provisioning/datasources/datasource.yml
+COPY monitoring/grafana/provisioning/datasources/datasource.yml /etc/grafana/provisioning/datasources/datasource.yml
 
 EXPOSE 3000
