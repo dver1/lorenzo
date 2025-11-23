@@ -1,3 +1,10 @@
+# [2.17.0](https://github.com/dver1/lorenzo/compare/v2.16.0...v2.17.0) (2025-11-23)
+
+
+### Features
+
+* intento enesimo ([53f615e](https://github.com/dver1/lorenzo/commit/53f615e3ef9c6c9c48a4925e1a6c6d8131b057c0))
+
 # [2.16.0](https://github.com/dver1/lorenzo/compare/v2.15.0...v2.16.0) (2025-11-23)
 
 
