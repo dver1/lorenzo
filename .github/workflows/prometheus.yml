@@ -1,12 +1,10 @@
 name: Deploy Prometheus
-
 on:
   push:
     branches:
       - main
     paths:
       - 'monitoring/prometheus/**'
-
 
 jobs:
   build-and-deploy-prometheus:
@@ -22,14 +20,14 @@ jobs:
         with:
           project_id: rigoberta-menchu
 
-      - name: Build Prometheus image
+      - name: Prepare Dockerfile
+        run: cp Dockerfile.prometheus Dockerfile
+
+      - name: Build & Deploy Prometheus
         run: |
           gcloud builds submit \
-            --tag europe-west1-docker.pkg.dev/rigoberta-menchu/monitoring/prometheus:latest \
-            --dockerfile Dockerfile.prometheus .
+            --tag europe-west1-docker.pkg.dev/rigoberta-menchu/monitoring/prometheus:latest .
 
-      - name: Deploy to Cloud Run
-        run: |
           gcloud run deploy prometheus \
             --image europe-west1-docker.pkg.dev/rigoberta-menchu/monitoring/prometheus:latest \
             --platform managed \
