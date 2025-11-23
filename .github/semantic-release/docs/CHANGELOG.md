@@ -1,3 +1,10 @@
+## [2.10.1](https://github.com/dver1/lorenzo/compare/v2.10.0...v2.10.1) (2025-11-23)
+
+
+### Bug Fixes
+
+* add lorenzo metrics ([8ccda1d](https://github.com/dver1/lorenzo/commit/8ccda1dc0908bf51608a72311e9b9c12de3c049c))
+
 # [2.10.0](https://github.com/dver1/lorenzo/compare/v2.9.0...v2.10.0) (2025-11-23)
 
 
