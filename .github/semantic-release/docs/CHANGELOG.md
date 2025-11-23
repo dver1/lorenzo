@@ -1,3 +1,10 @@
+# [2.12.0](https://github.com/dver1/lorenzo/compare/v2.11.0...v2.12.0) (2025-11-23)
+
+
+### Features
+
+* add package json ([06942b0](https://github.com/dver1/lorenzo/commit/06942b01f3f41ab585213bc2f91c71bd03988168))
+
 # [2.11.0](https://github.com/dver1/lorenzo/compare/v2.10.1...v2.11.0) (2025-11-23)
 
 
