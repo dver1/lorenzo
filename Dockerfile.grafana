@@ -6,4 +6,3 @@ COPY monitoring/grafana/grafana.ini /etc/grafana/grafana.ini
 COPY monitoring/grafana/datasource.yml /etc/grafana/provisioning/datasources/datasource.yml
 
 EXPOSE 3000
-
