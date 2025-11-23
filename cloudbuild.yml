@@ -1,0 +1,6 @@
+steps:
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-t', 'europe-west1-docker.pkg.dev/rigoberta-menchu/monitoring/grafana', '-f', 'Dockerfile.grafana', '.']
+
+images:
+  - 'europe-west1-docker.pkg.dev/rigoberta-menchu/monitoring/grafana'

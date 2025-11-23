@@ -7,4 +7,3 @@ datasources:
     url: https://prometheus-82639241850.europe-west1.run.app
     isDefault: true
     
-    

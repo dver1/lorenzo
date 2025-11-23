@@ -8,7 +8,7 @@ on:
       - 'Dockerfile.grafana'
 
 jobs:
-  deploy:
+  grafana-deployment:
     runs-on: ubuntu-latest
 
     steps:
@@ -37,10 +37,9 @@ jobs:
       - name: Build & Push Grafana
         run: |
           gcloud builds submit . \
-            --tag europe-west1-docker.pkg.dev/rigoberta-menchu/monitoring/grafana \
+            --config=cloudbuild.yaml \
             --project rigoberta-menchu \
-            --timeout=900s \
-            --dockerfile=Dockerfile.grafana
+            --timeout=900s
 
       - name: Deploy to Cloud Run
         run: |
