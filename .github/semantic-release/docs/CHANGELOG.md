@@ -1,3 +1,10 @@
+# [2.16.0](https://github.com/dver1/lorenzo/compare/v2.15.0...v2.16.0) (2025-11-23)
+
+
+### Features
+
+* ulzana ([f9db574](https://github.com/dver1/lorenzo/commit/f9db574360850bcb7405cf6ebb64624756c30012))
+
 # [2.15.0](https://github.com/dver1/lorenzo/compare/v2.14.0...v2.15.0) (2025-11-23)
 
 
