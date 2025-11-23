@@ -37,7 +37,7 @@ jobs:
       - name: Build & Push Grafana
         run: |
           gcloud builds submit . \
-            --config=cloudbuild.yaml \
+            --config=monitoring/grafana/cloudbuild.yaml \
             --project rigoberta-menchu \
             --timeout=900s
 
