@@ -5,4 +5,6 @@ FROM prom/prometheus:v2.53.0
 COPY monitoring/prometheus/prometheus.yml /etc/prometheus/prometheus.yml
 
 EXPOSE 9090
-CMD ["--config.file=/etc/prometheus/prometheus.yml", "--storage.tsdb.path=/prometheus"]
+
+ENTRYPOINT [ "prometheus" ]
+CMD [ "--config.file=/etc/prometheus/prometheus.yml", "--storage.tsdb.path=/prometheus" ]
