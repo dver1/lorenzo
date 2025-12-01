@@ -250,3 +250,5 @@ El endpoint `/metrics` te mostrará:
 - SVG para el personaje (Lorenzo con sombrero, bigote y corbata)
 - Node.js + Express.js (servidor web)
 - Docker
+
+
