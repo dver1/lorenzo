@@ -1,3 +1,10 @@
+## [2.21.1](https://github.com/dver1/lorenzo/compare/v2.21.0...v2.21.1) (2025-12-01)
+
+
+### Bug Fixes
+
+* change names ([b775c66](https://github.com/dver1/lorenzo/commit/b775c663b68fc3e48f68d575621a0d055b2ecffd))
+
 # [2.21.0](https://github.com/dver1/lorenzo/compare/v2.20.0...v2.21.0) (2025-12-01)
 
 
