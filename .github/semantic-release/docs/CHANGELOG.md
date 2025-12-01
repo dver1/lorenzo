@@ -1,3 +1,10 @@
+# [2.21.0](https://github.com/dver1/lorenzo/compare/v2.20.0...v2.21.0) (2025-12-01)
+
+
+### Features
+
+* demo change ([bab5a9c](https://github.com/dver1/lorenzo/commit/bab5a9c7018ecb8230146ad95c43b477041db186))
+
 # [2.20.0](https://github.com/dver1/lorenzo/compare/v2.19.0...v2.20.0) (2025-12-01)
 
 
